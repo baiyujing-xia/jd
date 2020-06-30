@@ -1,0 +1,227 @@
+@charset "utf-8";
+$hovColor:#e33333;
+$color: #999; //普通文字颜色
+$thovColor:#c81623; //菜单划入颜色
+$tColor: #333; //标题文字颜色  菜单颜色
+$tfontSize: 15px; //标题文字大小
+$tcolor:#e1251b;
+// $width:610/3+"px";
+@mixin borderstyle($style:solid, $size:1px, $color:#ccc) {
+    border: $style $size $color;
+}
+
+@mixin wh($h, $w:100%) {
+    // $w:100% 设置默认参数 
+    //设置宽高
+    width: $w;
+    height: $h;
+}
+
+@mixin whc($c, $h, $w:100%) {
+    //设置宽高,背景色，水平居中
+    width: $w;
+    height: $h;
+    background-color: $c;
+    margin: 0 auto;
+}
+
+@mixin ellipsis() {
+    //省略号
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin melli($num:2) {
+    //多行省略号
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+}
+
+@mixin noelli() {
+    //没有省略号
+    overflow: hidden;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+@mixin opacityvalue($value:0.3) {
+    //设置参数，添加默认值
+    opacity: $value;
+    filter: aplha(opacity=$value*100);
+}
+
+@mixin positionstyle($l, $t, $r:unset) {
+    //定位 left top
+    position: absolute;
+    left: $l;
+    top: $t;
+    right: $r;
+}
+
+@mixin positionlt($l, $t) {
+    //定位 left top
+    position: absolute;
+    left: $l;
+    top: $t;
+}
+@mixin positionrt($r, $t) {
+    //定位 left top
+    position: absolute;
+    right: $r;
+    top: $t;
+}
+
+@mixin elemcenter() {
+    //居中  定义加transform  
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% -50%);
+}
+
+@mixin flct($fs, $lh, $c:#fff, $ta:center) {
+    //字体 行高 颜色 居中
+    font-size: $fs;
+    line-height: $lh;
+    color: $c;
+    text-align: $ta;
+}
+
+@mixin flc($fs, $lh, $c:#fff) {
+    //字体 行高 颜色
+    font-size: $fs;
+    line-height: $lh;
+    color: $c;
+}
+
+@mixin flcw($fs, $lh, $c:#fff, $fw:800) {
+    //字体 行高 颜色
+    font-size: $fs;
+    line-height: $lh;
+    color: $c;
+    font-weight: $fw;
+}
+
+@mixin flw($fs, $lh, $fw:800) {
+    //字体 行高 加粗
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: 800;
+}
+
+@mixin fl($fs, $lh) {
+    //字体 行高
+    font-size: $fs;
+    line-height: $lh;
+}
+
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+%clear {
+    //清除  
+    content: "";
+    height: 0;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+}
+
+%pic {
+    content: ".";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+%lunbobtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include wh(35px, 25px);
+    background-color: rgba(0, 0, 0, .3);
+}
+
+%line {
+    content: "";
+    background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
+}
+
+%bg {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 20px;
+    background-image: url(../images/title.png);
+    background-size: 50px 20px;
+}
+
+@mixin product($url) {
+    @include wh(28px, 28px);
+    background-image: url($url);
+    background-size: 28px 28px;
+}
+
+.iconfont {
+    font-family: iconfont, sans-serif;
+    font-style: normal;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+}
+
+.upload-bg {
+    font-family: iconfont, sans-serif;
+    color: #9f9f9f;
+}
+
+
+/* 鼠标移入显示灰灰的 */
+
+.hac:hover {
+    opacity: .8;
+}
+
+
+/* 自定义字体文件引入 */
+
+@font-face {
+    font-family: impact;
+    src: url(../font/b07c9855bd807ccc9d825cb0392c6ef8.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: fzzzh;
+    src: url(//misc.360buyimg.com/mtd/pc/index_2019/1.0.0/fonts/f7001cef4a64d1b77d0cd4dfc670cc35.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: iconfont;
+    src: url(../font/a84f5777e97992c6fb6d423c003f187b.woff) format("woff")
+}
+body{
+    background-color: #f4f4f4;
+}
+
+@import 'search';
+@import 'lunbo';
+@import 'seckilling';
+@import '_space';
+@import 'biglunbo';
+@import 'texuan';
+@import 'square';
+@import 'feed';

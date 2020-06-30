@@ -1,0 +1,242 @@
+#seckilling {
+  height: 260px;
+  margin-bottom: 20px;
+  .container {
+    height: 260px;
+    .s_left {
+      position: relative;
+      float: left;
+      width: 190px;
+      height: 100%;
+      color: #fff;
+      a {
+        display: block;
+        overflow: hidden;
+        color: #fff;
+        @include wh(100%, 100%);
+        background: url(http://misc.360buyimg.com/mtd/pc/index_2019/1.0.0/assets/img/4a15d8883775742e3efbb850ae14def7.png)
+          no-repeat center center;
+        h2 {
+          width: 100%;
+          text-align: center;
+          font-size: 30px;
+          font-weight: 700;
+          margin-top: 31px;
+        }
+        .time {
+          margin-top: 90px;
+          font-size: 14px;
+          text-align: center;
+          strong {
+            font-size: 18px;
+            padding-right: 2px;
+            vertical-align: middle;
+            display: inline-block;
+            margin-top: -1px;
+            font-weight: 900;
+          }
+        }
+        span {
+          margin-left: auto;
+          margin-right: auto;
+          @include wh(30px, 130px);
+          margin-top: 10px;
+          display: block;
+          span {
+            position: relative;
+            float: left;
+            @include wh(30px, 30px);
+            text-align: center;
+            background-color: #2f3430;
+            margin-right: 20px;
+            color: white;
+            font-size: 20px;
+            &:nth-child(3) {
+              margin-right: 0px;
+            }
+            &:not(.colon)::after {
+              content: ":";
+              display: block;
+              position: absolute;
+              right: -13px;
+            }
+          }
+        }
+      }
+    }
+    .s_center {
+      position: relative;
+      float: left;
+      width: 800px;
+      height: 100%;
+      overflow: hidden;
+      font-size: 0px;
+      a {
+        display: inline-block;
+        @include wh(260px, 200px);
+        background: #fff;
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 30px;
+          right: 0;
+          width: 1px;
+          height: 200px;
+          background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
+        }
+        .s_img {
+          @include wh(140px, 140px);
+          margin: 30px 30px 0px 30px;
+          img {
+            @include wh(140px, 140px);
+          }
+        }
+        p {
+          font-size: 12px;
+          color: #333;
+          width: 160px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 13px;
+          @include ellipsis();
+        }
+
+        .s_p {
+          @include wh(24px, 160px);
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 7px;
+          border: 1px solid #e1251b;
+          position: relative;
+          line-height: 24px;
+          overflow: hidden;
+          background-color: #e1251b;
+
+          .first {
+            width: 92px;
+            height: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            &::before {
+              content: " ";
+              width: 0;
+              height: 0;
+              border-color: transparent white transparent transparent;
+              border-style: solid;
+              border-width: 24px 10px 0 0;
+              position: absolute;
+              top: 0;
+              left: 84px;
+            }
+            i {
+              font-size: 12px;
+              font-weight: 400;
+              padding-right: 2px;
+            }
+          }
+          .second {
+            height: 100%;
+            width: 66px;
+            float: right;
+            background: #fff;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            line-height: 22px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-decoration: line-through;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+    .s_right {
+      position: relative;
+      float: left;
+      @include wh(260px, 200px);
+      padding: 10px;
+      background-color: #fff;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      .hid {
+        overflow: hidden;
+        @include wh(240px, 180px);
+        a {
+          float: left;
+          @include wh(240px, 180px);
+          color: #666666;
+          .hid_img {
+            @include wh(120px, 120px);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            img {
+              @include wh(120px, 120px);
+            }
+          }
+          .hid_p {
+            background: linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 0.5),
+              rgba(220, 224, 236, 0.5)
+            );
+            text-align: center;
+            font-size: 14px;
+            position: relative;
+            width: 100%;
+            height: 90px;
+            margin-top: 10px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            p:nth-child(2) {
+              margin-top: 10px;
+              font-size: 14px;
+              color: #333;
+              font-weight: 700;
+            }
+          }
+          .hid_btn {
+            color: #e1251b;
+            border-radius: 14px;
+            @include wh(24px, 82px);
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-align: center;
+            display: inline-block;
+            line-height: 22px;
+            font-weight: 700;
+            padding-left: 4px;
+            font-size: 12px;
+            border: 1px solid #e1251b;
+            margin-top: 8px;
+          }
+        }
+      }
+      .s_li {
+        position: absolute;
+        left: 50%;
+        font-size: 0;
+        bottom: 16px;
+        text-align: center;
+        i {
+          position: relative;
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          margin-right: 4px;
+          border-radius: 50%;
+          background: #999;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+
+#search{
+    background-color: #fff;
+    .container{
+        position: relative;
+        &::after{
+            @extend %clear; 
+         }
+    }
+    
+    .logo{
+        float: left;
+        @include wh(120px,190px);
+        @include positionstyle(0,0);
+        bottom: 0;
+        margin: auto 0;
+        text-indent: -99999px;
+        background: url(../images/logo.png) no-repeat center center;
+        &:hover{
+            background: url(../images/jingdong-logo.gif) no-repeat center center;
+        }
+    }
+    .right{
+        width: 770px;
+        float: right;
+        margin-right: 158px;
+        position: relative;
+        .search-m{
+            @include wh(36px,770px);
+            padding-top: 24px;
+            .form{
+                @include borderstyle(solid,2px,#e2231a);
+                @include wh(32px,550px);
+                position: relative;
+                float: left;
+                ul{
+                    display: none;
+                    position: absolute;
+                    left: 9px;
+                    top: 41px;
+                    background-color: #fff;
+                    width: 364px;
+                    z-index: 9;
+                    li{
+                        font-size: 12px;
+                        line-height: 18px;
+                        color: #999;
+                        margin-bottom: 5px;
+                    }
+                }
+                .search_b{
+                    @include positionstyle(0,0);
+                    @include wh(28px,367px);
+                    line-height: 28px;
+                    padding: 2px 44px 2px 17px;
+                    color: $color;
+                    z-index: 50;
+                }
+                .search_t{
+                    border: 0;
+                    @extend .search_b;
+                    z-index: 2;
+                    height: 26px;
+                    margin-top: 2px;
+                }
+                .upload-bg{
+                    @include positionstyle(unset,6px,75px);
+                    font-size: 20px;
+                    color: $color;
+                    z-index: 90;
+                }
+                button{
+                    @include wh(32px,58px);
+                    @include positionstyle(unset,0px,0px);
+                    background-color: #e1251b;
+                    border: 0;
+                    .iconfont{
+                        color: #fff;
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .car{
+                float: left;
+                margin-left: 18px;
+                @include wh(34px,130px);
+                @include borderstyle(solid,1px,#eee);
+                color: #e1251b;
+                line-height: 34px;
+                text-align: center;
+                position: relative;
+                .icon-Shapecopy{
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+                b{
+                    @include positionstyle(30px,1px);
+                    @include wh(14px,18px);
+                    border-radius: 7px;
+                    background-color: #e1251b;
+                    color: #fff;
+                    font-size: 12px;
+                    text-align: center;
+                    line-height: 14px;
+                }
+                a{
+                    color: #e1251b;
+                }
+                &:hover{
+                    border-color: $thovColor;
+                }
+            }
+        }
+        #hotwords{
+            margin-top: 5px;
+            line-height: 20px;
+            a{
+                margin-right: 10px;
+            }
+            .hotwords_item{
+                color: $thovColor;
+            }
+            a:hover{
+                color: $thovColor;
+            }
+
+        }
+        #littlenav{
+            padding-top: 20px;
+            height: 40px;
+            margin-left: -56px;
+            .navul{
+                li{
+                    float: left;
+                    a{
+                        line-height: 40px;
+                        display: block;
+                        margin: 0 11px;
+                        font-size: 16px;
+                        color: $tColor;
+                        
+                        &:hover{
+                            color: $thovColor;
+                        }
+                    }
+                    .navfw{
+                        color: $thovColor;
+                        font-weight: 700;
+                    }
+                    
+                }
+            }
+        }
+        }
+    }

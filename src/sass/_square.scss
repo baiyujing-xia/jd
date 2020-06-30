@@ -1,0 +1,115 @@
+#square {
+  width: 100%;
+  height: 1005px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  .cantainer {
+    height: 1005px;
+  }
+}
+.square_head {
+  margin: 0 auto;
+  width: 1190px;
+  height: 45px;
+  margin-bottom: 20px;
+  h3 {
+    @include wh(45px, 150px);
+    position: relative;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 45px;
+    padding: 0 30px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    color: #333;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      background-image: url(http://misc.360buyimg.com/mtd/pc/index_2019/1.0.0/assets/sprite/floor_hd/sprite.png);
+      background-position: -25px 0;
+      width: 25px;
+      height: 20px;
+      right: 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      background-image: url(http://misc.360buyimg.com/mtd/pc/index_2019/1.0.0/assets/sprite/floor_hd/sprite.png);
+      background-position: 0 0;
+      width: 25px;
+      height: 20px;
+      left: 0;
+    }
+  }
+}
+.square-min {
+  // height: 950px;
+  font-size: 0;
+  .square-item {
+    float: left;
+    // vertical-align: top;
+    // display: inline-block;
+    @include wh(370px, 290px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    a {
+      display: inline-block;
+      position: relative;
+      @include wh(370px, 290px);
+      img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .channels_item {
+    // vertical-align: top;
+    float: left;
+    // display: inline-block;
+    @include wh(180px, 290px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+    .channels_f {
+      display:inline-block;
+      height: 30px;
+      margin-left: 30px;
+      margin-right: 10px;
+      padding-top: 17px;
+      padding-bottom: 13px;
+      line-height: 30px;
+      @include ellipsis();
+      .channels_p {
+        font-size: 22px;
+        font-weight: 700;
+        color: #333;
+        margin-right: 5px;
+      }
+    }
+    .channels_c {
+      font-size: 0;
+      line-height: 0;
+      padding-left: 30px;
+      @include wh(100px,260px);
+      a{
+        display: inline-block;
+        @include wh(100px,100px);
+        margin-right: 30px;
+        img{
+          @include wh(100%);
+        }
+      }
+    }
+  }
+  .channels_no{
+    margin-right: 0;
+  }
+}

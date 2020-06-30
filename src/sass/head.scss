@@ -1,0 +1,225 @@
+@charset "utf-8";
+$backcolor:#e3e4e5;
+$hovColor:#e33333;
+$color: #999; //普通文字颜色
+$thovColor:#c81623; //菜单划入颜色
+$tColor: #333; //标题文字颜色  菜单颜色
+$tfontSize: 15px; //标题文字大小
+@mixin borderstyle($style:solid, $size:1px, $color:#ccc) {
+    border: $style $size $color;
+}
+
+@mixin wh($h, $w:100%) {
+    //设置宽高
+    width: $w;
+    height: $h;
+}
+
+@mixin whc($c, $h, $w:100%) {
+    //设置宽高,背景色，水平居中
+    width: $w;
+    height: $h;
+    background-color: $c;
+    margin: 0 auto;
+}
+
+@mixin ellipsis() {
+    //省略号
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin opacityvalue($value:0.3) {
+    //设置参数，添加默认值
+    opacity: $value;
+    filter: aplha(opacity=$value*100);
+}
+
+@mixin positionstyle($l, $t, $r:unset) {
+    //定位 left top
+    position: absolute;
+    left: $l;
+    top: $t;
+    right: $r;
+}
+
+@mixin elemcenter() {
+    //居中  定义加transform
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% -50%);
+}
+
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+#header {
+    @include whc($backcolor, 30px);
+    .container {
+        height: 30px;
+        position: relative;
+        .big {
+            display: none;
+            @include positionstyle(0, 29px);
+            @include borderstyle();
+            @include wh(221px, 988px);
+            padding: 15px 0;
+        }
+    }
+    .left {
+        float: left;
+        .area {
+            position: relative;
+            font-size: 0;
+            @include wh(28px, 58px);
+            line-height: 28px;
+            text-align: center;
+            @include borderstyle(solid, 1px, $backcolor);
+            .icon-ziyuan {
+                color: #f10215;
+            }
+            &:hover {
+                @include borderstyle();
+                height: 29.5px;
+                z-index: 99;
+                border-bottom: unset;
+                background-color: #fff;
+                &+.city {
+                    z-index: 1;
+                    display: block;
+                }
+            }
+        }
+        .city {
+            @include positionstyle(0, 29px);
+            display: none;
+            background-color: #fff;
+            z-index: 99;
+            @include wh(442px, 300px);
+            padding: 10px;
+            @include borderstyle();
+            ul {
+                li {
+                    @include wh(28px, 52px);
+                    padding-left: 8px;
+                    line-height: 28px;
+                    text-align: left;
+                    float: left;
+                    .active {
+                        display: block;
+                        @include wh(28px, 24px);
+                        padding: 0 8px;
+                        background-color: #f10215;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .nav {
+        float: right;
+        height: 100%;
+        ul {
+            height: 100%;
+            li {
+                float: left;
+                height: 100%;
+                position: relative;
+                .cons{
+                    color:red !important;
+                }
+                &.lore {
+                    position: relative;
+                    
+                    &::after {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                    .user {
+                        display: inline-block;
+                        display: none;
+                        line-height: 30px;
+                        span {
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 0 1px;
+                            line-height: 12px;
+                            font-size: 10px;
+                            color: #666;
+                            margin-left: 5px;
+                            border: #999 1px solid;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .list {
+                    @include positionstyle(0, 29px);
+                    display: none;
+                    background-color: #fff;
+                    z-index: 99;
+                }
+                .oneitem {
+                    @include wh(161px, 280px);
+                }
+                .twoitem {
+                    @include wh(72px, 140px);
+                    padding: 10px 0;
+                }
+                .thirditem {
+                    @include wh(227px, 177px);
+                }
+                a {
+                    text-align: center;
+                    display: inline-block;
+                    padding: 0 7px;
+                    line-height: 30px;
+                    vertical-align: top;
+                    &:hover{
+                        color: red;
+                    }
+                }
+                .login {
+                    padding: 0;
+                }
+                .item {
+                    height: 28px;
+                    padding-right: 20px;
+                    position: relative;
+                    z-index: 99;
+                    @include borderstyle(solid, #e3e4e5, 1px);
+                    border-bottom: unset;
+                    .icon-xiangxia {
+                        @include positionstyle(unset, 1px, 6px);
+                        color: $color;
+                        font-size: 12px;
+                        font-weight: 700;
+                    }
+                    &:hover {
+                        @include borderstyle();
+                        border-bottom: none;
+                        background-color: #fff;
+                        height: 31px;
+                        z-index: 99;
+                        &+.list {
+                            display: block;
+                            box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+                        }
+                    }
+                }
+                &:not(.last)::after {
+                    content: "";
+                    display: inline-block;
+                    width: 1px;
+                    height: 10px;
+                    margin: 11px 5px 0;
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
+}

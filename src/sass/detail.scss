@@ -1,0 +1,51 @@
+#header {
+  background: red;
+  width: 100%;
+  height: 175px;
+}
+#sh-hot-content {
+  position: relative;
+  width: 1920px;
+  text-align: center;
+  left: 50%;
+  margin-left: -960px;
+  height: 110px;
+  overflow: hidden;
+  img {
+    vertical-align: middle;
+  }
+}
+#sh-tab {
+  width: 100%;
+  height: 40px;
+  background-color: #030200;
+  .container {
+    position: relative;
+    margin: 0 auto;
+    height: 40px;
+    font-size: 14px;
+    color: #333;
+    width: 1210px;
+    .menu-list {
+      width: 100%;
+      height: 40px;
+      list-style: none;
+      li {
+        float: left;
+        line-height: 24px;
+        height: 24px;
+        border-radius: 12px;
+        padding: 8px 15px;
+        a {
+          
+          color: #fdfbfb;
+          position: relative;
+          z-index: 4;
+          display: block;
+          padding: 0 15px;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}
