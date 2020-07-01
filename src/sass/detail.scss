@@ -3,6 +3,10 @@
   width: 100%;
   height: 175px;
 }
+.container {
+  width: 1210px;
+  margin: 0 auto;
+}
 #sh-hot-content {
   position: relative;
   width: 1920px;
@@ -21,11 +25,9 @@
   background-color: #030200;
   .container {
     position: relative;
-    margin: 0 auto;
     height: 40px;
     font-size: 14px;
     color: #333;
-    width: 1210px;
     .menu-list {
       width: 100%;
       height: 40px;
@@ -36,16 +38,292 @@
         height: 24px;
         border-radius: 12px;
         padding: 8px 15px;
+
         a {
-          
           color: #fdfbfb;
           position: relative;
           z-index: 4;
           display: block;
           padding: 0 15px;
-          border-radius: 12px;
+          border-radius: 24px;
+          &:hover {
+            background: rgba($color: #ffffff, $alpha: 0.5);
+          }
         }
       }
     }
+    .s-form {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      font-size: 14px;
+      color: #333;
+      .s-form-f {
+        padding: 0 0 0 10px;
+        width: 130px;
+        line-height: 22px;
+        height: 22px;
+        background-color: #ffffff;
+        color: #c9c9c9;
+        vertical-align: top;
+        outline: none;
+        border: solid 1px #e1e1e1;
+        border-top-left-radius: 11px;
+        border-bottom-left-radius: 11px;
+      }
+      .s-form-c {
+        margin-left: -5px;
+        padding: 0 10px;
+        border: 0;
+        height: 24px;
+        width: 46px;
+        cursor: pointer;
+        border-top-right-radius: 11px;
+        border-bottom-right-radius: 11px;
+        background: #333
+          url(http://img13.360buyimg.com/cms/jfs/t3121/284/4170076300/1201/43e1ad98/583543d4Nc7e0c1a4.png)
+          no-repeat center;
+      }
+    }
+  }
+}
+#crumb-wrap {
+  background: #f2f2f2;
+  .crumb {
+    padding: 13px 0 9px;
+  }
+}
+#map {
+  .container {
+    color: #333333;
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
+.map-warp {
+  width: 352px;
+  float: left;
+  padding-bottom: 15px;
+  .sm-img {
+    position: relative;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+  }
+  .spec-list {
+    margin-bottom: 18px;
+    position: relative;
+    .spec-ul {
+      position: absolute;
+      width: 348px;
+      height: 68px;
+      top: 0px;
+      left: 0px;
+      li {
+        float: left;
+        margin: 0 8px;
+      }
+    }
+  }
+  .preview-info {
+    position: relative;
+    bottom: -80px;
+    .left-btns {
+      float: left;
+      a {
+        color: #333;
+        margin-right: 2px;
+      }
+    }
+    .right-btns {
+      float: right;
+      a {
+        color: #333;
+      }
+    }
+  }
+}
+.map-info {
+  position: relative;
+  width: 590px;
+  float: left;
+  margin-left: 30px;
+  min-height: 590px;
+  _height: 590px;
+  margin-right: 24px;
+
+  .sku-name {
+    font: 700 16px Arial, "microsoft yahei";
+    color: #666;
+    padding-top: 10px;
+    line-height: 28px;
+    margin-bottom: 5px;
+  }
+  .dt {
+    line-height: 30px;
+    float: left;
+    padding-left: 10px;
+    font-family: simsun;
+    color: #999;
+  }
+  .summary {
+    padding: 10px 0 0;
+    background: #f3f3f3;
+    position: relative;
+    padding-bottom: 5px;
+    .summary-price {
+      position: relative;
+      margin-bottom: 5px;
+
+      .m {
+        font-size: 16px;
+        color: #e4393c;
+      }
+      .price {
+        font-size: 22px;
+        color: #e4393c;
+      }
+    }
+    .summary-top {
+      .dd {
+        position: relative;
+        line-height: 30px;
+        padding-right: 90px;
+        min-height: 35px;
+        em {
+          color: #df3033;
+          background: 0 0;
+          border: 1px solid #df3033;
+          padding: 2px 3px;
+          margin-right: 5px;
+          display: inline-block;
+          line-height: 16px;
+          margin-left: 5px;
+        }
+        i {
+          color: #666;
+          line-height: 18px;
+        }
+        a {
+          color: #666;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+.track {
+  color: #666;
+  .dd {
+    line-height: 25px;
+    margin-top: 10px;
+    margin-left: 70px;
+    .area {
+      float: left;
+      position: relative;
+      top: 0;
+      height: 23px;
+      background: #fff;
+      border: 1px solid #cecbce;
+      padding: 0 24px 0 4px;
+      line-height: 23px;
+      overflow: hidden;
+    }
+    strong {
+      margin-left: 10px;
+      margin-right: 5px;
+      float: left;
+      font-size: 12px;
+    }
+    .fl {
+      font-size: 12px;
+      float: left;
+    }
+    a {
+      margin-left: 10px;
+      color: #646fb0;
+      font-size: 12px;
+      word-break: keep-all;
+    }
+  }
+}
+.choose-attrs {
+  height: 40px;
+  margin-top: 40px;
+  margin-bottom: 3px;
+  line-height: 40px;
+  .dd {
+    height: 40px;
+
+    span {
+      border: 1px solid #ccc;
+      padding: 0 10px;
+      float: left;
+      background-color: #fff;
+      margin-right: 7px;
+      position: relative;
+      bottom: 6px;
+      margin-left: 20px;
+    }
+  }
+}
+.choose-btns {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 20px;
+  padding: 0 10px;
+  .choose-amount {
+    width: 58px;
+    height: 44px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    position: relative;
+    margin-right: 10px;
+    float: left;
+    input{
+      display: block;
+    width: 43px;
+    height: 42px;
+    line-height: 42px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    border: none;
+    border: 0;
+    text-align: center;
+    }
+    a{
+      display: block;
+    width: 15px;
+    text-align: center;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    background: #f1f1f1;
+    color: #666;
+    position: absolute;
+    right: -1px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    cursor: not-allowed;
+    &:nth-child(2){
+      top: 21px;
+    }
+    }
+  }
+  .shop-cat{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #df3033;
+    color: #fff;
+    height: 46px;
+    line-height: 46px;
+    padding: 0 26px;
+    font-size: 18px;
+    font-family: "microsoft yahei";
+    margin-right: 10px;
+    float: left;
   }
 }
