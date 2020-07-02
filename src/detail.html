@@ -6,6 +6,7 @@
     <title>京东详情页</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/detail.css">
+    <script src="./js/require.js" defer async="true" data-main="./js/main.detail.js"></script>
 </head>
 <body>
     <div id="header"></div>
@@ -16,7 +17,7 @@
         <div class="container">
             <ul class="menu-list">
                 <li>
-                    <a href="">首页</a>
+                    <a href="http://localhost/jd/src/demo.html">首页</a>
                 </li>
                 <li>
                     <a href="">全部商品</a>
@@ -58,21 +59,7 @@
                 </div>
                 <div class="spec-list">
                     <ul class="spec-ul">
-                        <li>
-                            <img src="http://img10.360buyimg.com/n5/s50x64_jfs/t1/118190/11/11433/261261/5efa10f9E339b6ae2/291f4902d41e6e08.jpg!cc_50x64.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="http://img10.360buyimg.com/n5/s50x64_jfs/t1/113113/19/8208/79748/5ecb7a74Ef33b3f30/fd51623203e4cd3e.jpg!cc_50x64.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="http://img10.360buyimg.com/n5/s50x64_jfs/t1/128498/24/2980/89793/5ecb7a74Ea8b85c15/035a352519d9569e.jpg!cc_50x64.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="http://img10.360buyimg.com/n5/s50x64_jfs/t1/113765/24/8264/67679/5ecb7a74E02e4ca14/24098aa010b3e551.jpg!cc_50x64.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="http://img10.360buyimg.com/n5/s50x64_jfs/t1/136906/6/304/115239/5ecb7a75E2aad12e4/be5249490aa83177.jpg!cc_50x64.jpg" alt="">
-                        </li>
+                       
                     </ul>
                 </div>
                 <div class="preview-info">
@@ -93,14 +80,13 @@
             </div>
             <div class="map-info">  
                 <div class="sku-name">
-                    <img src="http://img13.360buyimg.com/devfe/jfs/t4636/72/1687629000/219/64a7daf7/58e44c0fN9f20107c.png" alt="">
-                    <span>汐颜 2020夏季新款女装宽松显瘦印花上衣休闲短裤时尚套装女两件套G-343-8015 图片色 S </span>
+                  
                 </div>
                 <div class="summary">
                     <div class="summary-price ">
                         <div class="dt">闪 购 价</div>
                         <span class="m">￥</span>
-                        <span class="price">134.00</span>
+                        <span class="price"></span>
                     </div>
                     <div class="summary-top">
                         <div class="dt">促　　销</div>
@@ -129,13 +115,15 @@
                         <span>大号</span>
                     </div>
                 </div>
+                <div class="surplus"></div>
                 <div class="choose-btns">
                     <div class="choose-amount ">
-                        <input type="text" value="1" data-max="200">
-                        <a href="" class="btn-reduce">-</a>
-                        <a href="" class="btn-add">+</a>
+                        <input type="text" value="1" data-max="200" id="cat-input">
+                        <a href="javascript:void(0)" class="btn-reduce">-</a>
+                        <a href="javascript:void(0)" class="btn-add">+</a>
                     </div>
-                    <a href="" class="shop-cat">加入购物车</a>
+                    <a href="javascript:void(0)" class="shop-cat">加入购物车</a>
+                    <a href="http://localhost/jd/src/shopcat.html" class="shop-cat">进入购物车</a>
                 </div>
             </div>
           

@@ -6,6 +6,7 @@
     <title>京东！购物车</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/shopcat.css">
+    <script src="./js/require.js" defer async="true" data-main="./js/main-cat.js"></script>
 </head>
 <body>
     <div id="header"></div>
@@ -14,8 +15,8 @@
             <div class="cat-warp">
                 <div class="cat-head ">
                     <div class="cat-checkbox column">
-                        <input type="checkbox">
-                        <label for="">全选</label>
+                        <input type="checkbox" name="all-check" id="all-check">
+                        <label for="" name="all-check">全选</label>
                     </div>
                     <div class="column t-goods">商品</div>
                     <div class="column t-props"></div>
@@ -25,7 +26,7 @@
                     <div class="column t-action">操作</div>
                 </div>
                 <div class="cat-list">
-                    <div class="list-item">
+                   <!--  <div class="list-item">
                         <div class="cell p-checkbox">
                             <input type="checkbox">
                         </div>
@@ -58,7 +59,7 @@
                             <span>删除</span>
                             <a href="">移到我的关注</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div id="cat-floatbar">
                     <div class="container">
@@ -67,14 +68,11 @@
                                 <span class="txt ">
                                     总价:¥
                                 </span>
-                                <em>0.00</em>
+                                <em class="sum">0.00</em>
                             </div>
                             <div class="btn-area">
-                                <a href="">去结算</a>
+                                <a href="javascript:void(0)">去结算</a>
                             </div>
-                           
-                           
-                            
                         </div>
                     </div>
                 </div>
