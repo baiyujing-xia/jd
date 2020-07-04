@@ -1,4 +1,3 @@
-
 define([],function(){
    return{
     get(key) {
@@ -21,7 +20,6 @@ define([],function(){
             document.cookie = `${key}=${value};path=/`;
         }
     },
-
     remove(key) {
         this.set(key, '', -1);
     }

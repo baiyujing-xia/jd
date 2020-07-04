@@ -22,22 +22,7 @@
      -想到拿到的接口数据的数据类型 -JSON对象 可以不传 默认拿到数据是对象
  5.最大的兼容，让使用的少犯点错误
  */
- //    $ajax({
- //     type:'post',//请求方式
- //     url:"http://localhost/boject/5.14ajax/2updata.php",
- //     // data:{
- //     //     name:"张三",
- //     //     age:16
- //     // },
- //     async:true,
- //     success:function(res){
- //         console.log(res);
- //     },
- //     error:function(err){
- //         throw new Error(err);
- //     },
- //     dataType:"string"
- // });
+ 
 define([],function(){
     return{
       ajax:function (option) {

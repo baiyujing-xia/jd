@@ -15,7 +15,6 @@ require(['./lib/ajax_module'],function(m1){
             flag= myreg.test(this.value);
             
         }
-        
     function clickHander(){
         if(!flag) return result.innerHTML='请填写正确的手机号码';
         m1.ajax({

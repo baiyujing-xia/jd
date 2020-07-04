@@ -1,3 +1,12 @@
+%clear {
+  //清除  
+  content: "";
+  height: 0;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  clear: both;
+}
 #header {
   background: red;
   width: 100%;
@@ -6,6 +15,9 @@
 .container {
   width: 1210px;
   margin: 0 auto;
+  &::after{
+    @extend %clear;
+  } 
 }
 #sh-hot-content {
   position: relative;
@@ -105,11 +117,21 @@
   width: 352px;
   float: left;
   padding-bottom: 15px;
+  /* 放大镜小图 */
   .sm-img {
     position: relative;
     border: 1px solid #eee;
     margin-bottom: 20px;
+    
+    .movebox{
+      position: absolute;
+      // width: 200px;
+      // height: 200px;
+      background-color: rgba($color: blue, $alpha: 0.5);
+      display: none;
+    }
     img{
+      display: block;
       width: 350px;
       height: 462px;
     }
@@ -124,11 +146,16 @@
       top: 0px;
       left: 0px;
       li {
+        border: 1px solid transparent;
+        &.active{
+          border: 1px solid red;
+        }
         float: left;
         margin: 0 2px;
         img{
-          width: 65px;
-      height: 65px;
+          display: block;
+          width: 63px;
+      height: 63px;
         }
       }
     }
@@ -331,7 +358,6 @@
     font-size: 18px;
     font-family: "microsoft yahei";
     margin-right: 10px;
-    float: left;
   }
 }
 .surplus{
@@ -340,4 +366,27 @@
   text-align: center;
   color: orangered;
   font-size: 16px;
+}
+/* 放大镜显示区域 */
+
+.bigimgdiv{
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  left: 355px;
+  width: 400px;
+  height: 400px;
+  top: 0px;
+  z-index: 5;
+  .bigimg{
+    position: absolute;
+    width:700px;
+    height: 924px;
+    img{
+      display: block;
+      width:700px;
+    height: 924px;
+
+    }
+  }
 }
