@@ -37,9 +37,8 @@
       .l_header {
         height: 60px;
         padding: 0 20px;
-        font-size: 0;
-        line-height: 0;
-        a {
+      
+        &>a {
           display: inline-block;
           position: relative;
           height: 32px;
@@ -56,15 +55,14 @@
           position: absolute;
           top: 8%;
           right: 0;
-          height: 21px;
           li {
-            height: 21px;
             float: left;
             margin: 0 13.5px;
 
             &:hover {
               border-bottom: 2px solid #c81623;
               a {
+                display: block;
                 color: #c81623;
               }
             }
@@ -73,6 +71,10 @@
       }
       .l_center {
         @include wh(270px, 560px);
+        position: absolute;
+        display: none;
+        left: 0px;
+        bottom: 0px;
         .center_left {
           background-color: rgba(109, 126, 146, 0.05);
           float: left;

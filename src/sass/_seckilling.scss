@@ -71,6 +71,17 @@
       height: 100%;
       overflow: hidden;
       font-size: 0px;
+      ul{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        &::after{
+          @extend %clear;
+        }
+        li{
+          float: left;
+        }
+      }
       a {
         display: inline-block;
         @include wh(260px, 200px);

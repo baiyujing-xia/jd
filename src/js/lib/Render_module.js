@@ -1,5 +1,5 @@
 /* 渲染类 */
-define(['./ajax_module','./paging_module','./detail_module','./catRenderCount'], function (oAjax,paging,det,cat) {
+define(['./ajax_module','./paging_module','./detail_module','./catRenderCount','./carousel_module','./slide_module'], function (oAjax,paging,det,cat,carousel,slid) {
     class Render {
         constructor(option) {
             this.parent = option.parent;//渲染的父元素
@@ -37,6 +37,7 @@ define(['./ajax_module','./paging_module','./detail_module','./catRenderCount'],
                         new det.Detail (that.renderItem).init();
                         
                     }
+                    
                      /* 首页为你推荐渲染 */
                     if(that.kind==='feedList'){
                         let str = '';
@@ -45,7 +46,7 @@ define(['./ajax_module','./paging_module','./detail_module','./catRenderCount'],
                      <li>
                           <a href="http://localhost/jd/src/detail.html?id=${element.sid}">
                                      <div class="feed_list_img">
-                                         <img src="" alt="" data-src="${element.url}">
+                                         <img src="${element.url}" alt="" data-src="${element.url}">
                                      </div>
                                      <div class="feed_list_p">
                                          <p>${element.title}</p>
@@ -65,8 +66,16 @@ define(['./ajax_module','./paging_module','./detail_module','./catRenderCount'],
                     }
                    /* 列表页渲染 */ 
                    if(that.kind==='list'){
-                    new Pag(that.pageItem).init()
+                    new paging.Pag(that.renderItem).init()
                    }
+                   /* 轮播渲染以及轮播效果*/
+                   if(that.kind==='carousel'){
+                       new carousel.Carousel(that.renderItem).init();
+                   }
+                   /* 点击滑动轮播图渲染以及效果 */
+                   if(that.kind==='sli'){
+                    new slid.Slide(that.renderItem).init();
+                }
                 }
             })
             /* 2懒加载监听滚动事件 */

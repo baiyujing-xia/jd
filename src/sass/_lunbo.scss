@@ -9,6 +9,7 @@
   background: rgba(0, 0, 0, 0.5);
   line-height: 35px;
   border-radius: 0 17px 17px 0;
+  cursor: pointer;
   .iconfont {
     position: relative;
     left: -5px;
@@ -17,6 +18,7 @@
   }
 }
 .lunbo_btnright {
+  cursor: pointer;
   @include wh(35px, 25px);
   @include positionrt(0px, 50%);
   background: rgba(0, 0, 0, 0.5);
@@ -66,10 +68,12 @@
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
       width: 998px;
       min-height: 468px;
+      z-index: 99;
       @include borderstyle(solid, 1px, #f7f7f7);
       background-color: #fff;
       display: none;
       .bnaitem {
+        display: none;
         @include positionlt(0px, 0px);
         width: 100%;
         min-height: 468px;
@@ -86,10 +90,14 @@
       position: relative;
       margin-right: 10px;
       .big {
+        &::after{
+          @extend %clear;
+        }
         li {
-          float: left;
-          position: relative;
+          opacity: 0;
+          position: absolute;
           @include wh(470px, 590px);
+          transition: all 1s;
           a {
             display: inline-block;
             margin-right: 10px;
@@ -112,8 +120,11 @@
           border-radius: 50%;
           @include wh(8px, 8px);
           margin-right: 4px;
-          border: 1px solid rgba(0, 0, 0, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.5);
           background: rgba(255, 255, 255, 0.4);
+          &.active{
+            background: white;
+          }
         }
       }
     }
@@ -123,6 +134,18 @@
       display: inline-block;
       height: 470px;
       position: relative;
+      ul{
+        li{
+          transition: all 1s;
+         position: absolute; 
+         left: 0px;
+         top: 0px;
+         opacity: 0;
+        }
+      }
+      .lunbo_btnleft,.lunbo_btnright{
+        display: none;
+      }
       a {
         height: 150px;
         display: block;
@@ -142,7 +165,6 @@
     .user {
       height: 102px;
       background: #fff;
-      margin-top: 10px;
       overflow: hidden;
       .user_name {
         position: relative;
