@@ -1,3 +1,4 @@
+/*  */
 class Carousel{
     constructor(option){
         this.type=option.type//判断轮播类型

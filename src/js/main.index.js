@@ -99,6 +99,32 @@ new Ren.Render({
     renderItem:slideItem
 }).init(); 
 /* 小轮播 点击移动轮播 */
-
+const hid=document.querySelector('.hid'); 
+const sli=document.querySelector('.s_li');
+let minItem={
+    big:hid,//轮播图父元素
+    minli:sli,//小圆点点击素
+    type:'mincusl'
+}
+new Ren.Render({
+    type:'get',//请求的方式
+    url:'/php/getall.php',//接口
+    kind:'sli',//类型
+    renderItem:minItem
+}).init(); 
+/* 缓慢移动轮播 */
+const find=document.querySelector('.goods_list'); 
+const bar=document.querySelector('.bar');
+let slowItem={
+    big:find,//轮播图父元素
+    minli:bar,//移动的小块
+    type:'slow'
+}
+new Ren.Render({
+    type:'get',//请求的方式
+    url:'/php/getall.php',//接口
+    kind:'sli',//类型
+    renderItem:slowItem
+}).init(); 
 });
 

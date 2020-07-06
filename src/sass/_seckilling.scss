@@ -174,26 +174,37 @@
       position: relative;
       float: left;
       @include wh(260px, 200px);
-      padding: 10px;
+      // margin: 10px;
       background-color: #fff;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
+      overflow: hidden;
       .hid {
+        position: absolute;
+        left: 0px;
+        top: 0px;
         overflow: hidden;
-        @include wh(240px, 180px);
-        a {
-          float: left;
-          @include wh(240px, 180px);
-          color: #666666;
-          .hid_img {
-            @include wh(120px, 120px);
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
-            img {
-              @include wh(120px, 120px);
-            }
+          li{
+            float: left;
+            a {
+              display: block;
+              @include wh(240px, 195px);
+              color: #666666;
+              .hid_img {
+                @include wh(120px, 120px);
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                img {
+                  @include wh(120px, 120px);
+                }
+            
           }
+          &::after{
+            @extend %clear;
+          }
+        }
+      
           .hid_p {
             background: linear-gradient(
               180deg,
@@ -238,7 +249,7 @@
         font-size: 0;
         bottom: 16px;
         text-align: center;
-        i {
+        li{
           position: relative;
           display: inline-block;
           width: 4px;
@@ -246,6 +257,9 @@
           margin-right: 4px;
           border-radius: 50%;
           background: #999;
+          &.active{
+            background-color: blue;
+          }
         }
       }
     }

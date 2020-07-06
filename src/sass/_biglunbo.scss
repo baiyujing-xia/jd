@@ -42,7 +42,9 @@
       overflow: hidden;
       .goods_list{//JS设置轮播图
           padding-left:20px;
-            width: 2000px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
           a{
               display: inline-block;
               @include wh(180px,141px);
@@ -70,6 +72,22 @@
             p{
             margin-bottom: 10px; 
             }
+        }
+      }
+      .gundo{
+        margin-left:5px;
+        width: 980px;
+        height: 2px;
+        background-color: #ccc;
+        position: absolute;
+        bottom: 5px;
+        .bar{
+          width: 50px;
+          border-radius: 5px;
+          height: 10px;
+          background-color: #ccc;
+          position: absolute;
+          bottom: -5px;
         }
       }
     }
