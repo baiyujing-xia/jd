@@ -42,7 +42,7 @@ class Slide{
         if(this.type=='mincusl'){
             // console.log(this.minli)
             this.miliRender();
-            this.minli.addEventListener('click',(e)=>{
+            this.minli.addEventListener('mouseover',(e)=>{
                 e=e||event;
                 if(e.target.nodeName=='LI'){
                     this.miHander(e.target);
@@ -89,7 +89,6 @@ class Slide{
     /* 缓慢移动轮播渲染 */
     slowRender(){
         this.data=this.data.slice(40,50);
-        console.log(this.data)
         let str='';
         this.data.forEach(elm=>{
             str+=`

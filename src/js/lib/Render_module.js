@@ -40,6 +40,7 @@ define(['./ajax_module','./paging_module','./detail_module','./catRenderCount','
                     
                      /* 首页为你推荐渲染 */
                     if(that.kind==='feedList'){
+                        if(date.length===0) return;
                         let str = '';
                         date.forEach(element => {
                             str += `
@@ -62,7 +63,7 @@ define(['./ajax_module','./paging_module','./detail_module','./catRenderCount','
                      `;
     
                         });
-                        that.parent.innerHTML = str;    
+                        that.parent.innerHTML += str;    
                     }
                    /* 列表页渲染 */ 
                    if(that.kind==='list'){

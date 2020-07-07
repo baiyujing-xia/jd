@@ -5,7 +5,7 @@
     $pageSize = 20; // 每一页的长度
     $stratRow = ($currentPage-1)*$pageSize;
 
-    $sql = "select * from product limit $stratRow,$pageSize";
+    $sql = "select * from jdgoods limit $stratRow,$pageSize";
 
     $res = $mysqli->query($sql);
 

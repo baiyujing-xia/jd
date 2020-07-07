@@ -1,4 +1,4 @@
-require(['./lib/Render_module','./lib/cookie_module','./lib/indexTab_module','./lib/indexTab_module'],function(Ren,m3,tab){
+require(['./lib/Render_module','./lib/cookie_module','./lib/indexTab_module','./lib/feed_module'],function(Ren,m3,tab,feed){
     /* 1.登入注册 显示用户名*/
    let login=document.querySelector('.lore>.login');
    let loginame=document.querySelector('.user_show>a');
@@ -16,12 +16,11 @@ require(['./lib/Render_module','./lib/cookie_module','./lib/indexTab_module','./
    }
     /*2 渲染主页的为你推荐列表 */
     const feedListUl=document.querySelector('.feed_list>ul');
-    new Ren.Render({
-        parent:feedListUl,//渲染的父元素
-        type:'get',//请求的方式
-        url:'/php/getall.php',//接口
-        kind:'feedList'//类型
-    }).init(); 
+    const footheight=document.getElementById('foot');
+    new feed.Feed({
+        feedListUl,
+        footheight
+    }).init();
     /* 头部tab切换 */
     let bnaitem=document.querySelectorAll('.bnaitem');
     let firsttabUl=document.querySelectorAll('.bnav_l>ul>li');
@@ -126,5 +125,25 @@ new Ren.Render({
     kind:'sli',//类型
     renderItem:slowItem
 }).init(); 
+/* 搜索框优化 */
+let forminput=document.querySelector('.form>.search_t');
+let formul=document.querySelector('.form>ul');
+forminput.addEventListener('input',function(){
+    let time=setInterval(() => {
+        formul.style.display='block';
+        let script=document.createElement('script');
+        script.src=`https://suggest.taobao.com/sug?code=utf-8&q=${forminput.value}&_ksTS=1589723848122_399&callback=getlist&k=1&area=c2c&bucketid=16`;
+        document.body.appendChild(script);
+        document.body.removeChild(script)
+    }, 100);
+})
+window.getlist=getlist;
+function getlist(data){
+    let str='';
+    data.result.forEach(elm=>{
+       str+=`<li>${elm[0]}</li>`;
+    })
+    formul.innerHTML=str;
+}
 });
 
